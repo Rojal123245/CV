@@ -286,7 +286,7 @@
 							<div class="progress">
 							 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="60"
 							  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-							    <span>60%</span>
+							    <span>60%</spanDharan Adarsha H.S.S>
 							  	</div>
 							</div>
 						</div>
@@ -399,24 +399,35 @@
 	          </div>
           </div>
         </div>
+		
+<?php 
+if(isset($_POST['Submit'])){
 
+$to = "rozalpra@gmail.com";
+$subject = $_POST['subject'];
+$txt = $_POST['message'];
+$headers = $_POST['email'];
+
+mail($to,$subject,$txt,$headers);
+}
+?>
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
+            <form action="" method="POST" class="bg-light p-4 p-md-5 contact-form">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Your Name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="text" name="email" class="form-control" placeholder="Your Email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
+                <input type="text" class="form-control" name="subject" placeholder="Subject">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                <input type="submit" value="Send Message" name="Submit" class="btn btn-primary py-3 px-5">
               </div>
             </form>
           
